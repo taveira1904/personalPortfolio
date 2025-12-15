@@ -1,0 +1,17 @@
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-photo img {
+  border-radius: 10px;
+  max-width: 250px;
+  width: 100%;
+}
