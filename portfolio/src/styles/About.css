@@ -1,17 +1,121 @@
+/* Seção Sobre Mim */
+.about {
+  min-height: 100vh; /* garante altura da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, #0f172a, #1e293b); /* gradiente escuro moderno */
+  color: #e6eef8;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fundo decorativo sutil */
+.about::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59,130,246,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: move-bg 25s linear infinite;
+  z-index: 0;
+}
+
+@keyframes move-bg {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-50px,-50px); }
+}
+
+/* Container central */
 .about-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1100px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease forwards;
 }
 
+/* Animação de entrada */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Título da seção */
+.section-title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #3b82f6;
+  font-weight: 700;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #06b6d4;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* Texto da seção */
 .about-text {
   flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-text p {
+  margin-bottom: 1.2rem;
+}
+
+.about-text strong {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* Foto do desenvolvedor */
+.about-photo {
+  flex: 0 0 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-photo img {
-  border-radius: 10px;
-  max-width: 250px;
-  width: 100%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%; /* foto circular */
+  object-fit: cover;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-photo img:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+}
+
+/* Responsividade mobile */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-photo {
+    margin-bottom: 2rem;
+  }
 }

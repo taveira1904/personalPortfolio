@@ -2,11 +2,14 @@ import React, { useEffect, useRef } from 'react';
 import '../styles/Skills.css';
 
 const skillsData = [
-  { name: 'React', percent: 90 },
-  { name: 'JavaScript', percent: 95 },
-  { name: 'Node.js', percent: 85 },
-  { name: 'Firebase', percent: 80 },
-  { name: 'CSS', percent: 90 },
+  { name: 'React', percent: 60 },
+  { name: 'JavaScript', percent: 60 },
+  { name: 'MySql', percent: 80 },
+  { name: 'CSS', percent: 95 },
+   { name: 'HTML', percent: 95 },
+   { name: 'JS', percent: 70 },
+   { name: 'Wordpress', percent: 95 },
+   { name: 'Quality Assurance', percent: 100 },
 ];
 
 const Donut = ({ skill }) => {

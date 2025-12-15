@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/About.css';
+import profilePic from '../images/taveiraweb.png';
 
 const About = () => {
   return (
@@ -13,7 +14,7 @@ const About = () => {
           <p><strong>Objetivo:</strong> Criar soluções web escaláveis e modernas.</p>
         </div>
         <div className="about-photo">
-          <img src="https://via.placeholder.com/250" alt="Foto profissional" />
+          <img src= {profilePic} alt ="Foto profissional" />
         </div>
       </div>
     </section>
