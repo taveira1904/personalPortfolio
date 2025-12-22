@@ -1,34 +1,67 @@
-/* Hero Section Moderna */
+/* ===============================
+   HERO SECTION – LIVE WALLPAPER
+   =============================== */
+
+:root {
+  --bg-transform: translate(0, 0);
+}
+
+/* Hero principal */
 .hero {
   height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
   text-align: center;
+
   color: white;
   background: linear-gradient(135deg, #0f172a, #1e293b);
+  perspective: 1px;
 }
 
-/* Partículas animadas ou linhas leves */
-.hero::before {
-  content: '';
+/* Camada extra para parallax */
+.hero-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(59,130,246,0.15) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: move-bg 20s linear infinite;
+  inset: 0;
   z-index: 0;
   pointer-events: none;
 }
 
+/* Partículas animadas */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.15) 1px,
+    transparent 1px
+  );
+  background-size: 50px 50px;
+
+  animation: move-bg 25s linear infinite;
+  transform: var(--bg-transform);
+  will-change: transform;
+
+  z-index: 0;
+}
+
+/* Movimento contínuo suave */
 @keyframes move-bg {
-  0% { transform: translate(0,0); }
-  100% { transform: translate(-50px,-50px); }
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50px, -50px);
+  }
 }
 
 /* Conteúdo do Hero */
@@ -37,62 +70,103 @@
   z-index: 1;
   max-width: 800px;
   padding: 0 20px;
+
   animation: fadeInUp 1.5s ease forwards;
+  will-change: transform;
 }
 
+/* Animação de entrada */
 @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(50px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Título principal */
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
+
   background: linear-gradient(90deg, #3b82f6, #06b6d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
   animation: textGlow 2s ease-in-out infinite alternate;
 }
 
+/* Glow no texto */
 @keyframes textGlow {
-  0% { filter: drop-shadow(0 0 5px #3b82f6); }
-  100% { filter: drop-shadow(0 0 15px #06b6d4); }
+  0% {
+    filter: drop-shadow(0 0 6px #3b82f6);
+  }
+  100% {
+    filter: drop-shadow(0 0 16px #06b6d4);
+  }
 }
 
+/* Subtítulo */
 .hero h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #cbd5e1;
+
   opacity: 0;
   animation: fadeInUp 2s ease forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.4s;
 }
 
+/* Texto */
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   color: #94a3b8;
   line-height: 1.6;
+
   opacity: 0;
   animation: fadeInUp 2s ease forwards;
-  animation-delay: 1s;
+  animation-delay: 0.8s;
 }
 
-/* Botões modernos */
+/* Botões */
 .hero .btn {
+  display: inline-block;
   padding: 0.8rem 1.8rem;
   margin: 0.5rem;
+
   font-weight: 600;
   border-radius: 50px;
+
   background: linear-gradient(90deg, #3b82f6, #06b6d4);
   color: white;
+  text-decoration: none;
+
   transition: all 0.3s ease;
 }
 
+/* Hover botão */
 .hero .btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 20px rgba(59,130,246,0.4);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.45);
 }
 
+/* Responsivo */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}

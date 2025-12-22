@@ -1,3 +1,16 @@
+:root {
+--project-gradient: radial-gradient(circle at top, #0f172a 0, #020617 55%);
+}
+/* Secção em si: full width */
+#projects {
+  position: relative;
+  width: 100%;
+  background: var(--project-gradient);
+  overflow: hidden;
+}
+
+
+
 /* Grid de projetos */
 .projects-grid {
   display: grid;
