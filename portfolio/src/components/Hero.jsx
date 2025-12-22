@@ -10,7 +10,6 @@ const Hero = () => {
         <p>Desenvolvo aplicações web modernas e responsivas com foco em performance e UX.</p>
         <div>
           <button className="btn" onClick={() => document.getElementById('projects').scrollIntoView({behavior: 'smooth'})}>Ver Projetos</button>
-          <button className="btn" onClick={() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'})}>Contactar</button>
         </div>
       </div>
     </section>
