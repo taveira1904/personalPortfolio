@@ -1,0 +1,5 @@
+name: portfolio
+app_id: da_KE4I8tXU8X8a
+owner: taveira1904
+package: .
+kind: wasmer.io/App.v0

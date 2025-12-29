@@ -4,6 +4,7 @@ import '../styles/Projects.css';
 const projectsData = [
   { name: 'Projeto 1', desc: 'Aplicação de pesquisa de imagens', tech: 'JavaScript, HTML & CSS', github: 'https://github.com/taveira1904/imageBank', demo: '#' },
   { name: 'Projeto 2', desc: 'Controlo Universitário', tech: 'Python, Google Cloud, Firebase, HTML & CSS', github: 'https://github.com/taveira1904/webstatic', demo: '#' },
+  { name: 'Projeto 3', desc: 'Gestão de Tarefas', tech: 'React+Vite,JS,HTML & CSS', github: 'https://github.com/taveira1904/TicketManager', demo: '#' },
 ];
 
 const Projects = () => {
