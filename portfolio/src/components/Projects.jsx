@@ -4,7 +4,7 @@ import '../styles/Projects.css';
 const projectsData = [
   { name: 'Projeto 1', desc: 'Aplicação de pesquisa de imagens', tech: 'JavaScript, HTML & CSS', github: 'https://github.com/taveira1904/imageBank', demo: '#' },
   { name: 'Projeto 2', desc: 'Controlo Universitário', tech: 'Python, Google Cloud, Firebase, HTML & CSS', github: 'https://github.com/taveira1904/webstatic', demo: '#' },
-  { name: 'Projeto 3', desc: 'Gestão de Tarefas', tech: 'React+Vite,JS,HTML & CSS', github: 'https://github.com/taveira1904/TicketManager', demo: '#' },
+  { name: 'Projeto 3', desc: 'Gestão de Tarefas', tech: 'React+Vite,JS,HTML & CSS', github: 'https://github.com/taveira1904/TicketManager', link: 'https://ticketmanager.wasmer.app/' },
 ];
 
 const Projects = () => {
@@ -36,6 +36,11 @@ const Projects = () => {
               </p>
 
               <div className="project-links">
+                {p.link && (
+                  <a href={p.link} target="_blank" rel="noreferrer" className="btn btn-ghost">
+                    Link
+                  </a>
+                )}
                 <a href={p.github} target="_blank" rel="noreferrer" className="btn btn-ghost">
                   Ver github
                 </a>
