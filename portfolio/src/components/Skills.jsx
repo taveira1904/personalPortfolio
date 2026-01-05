@@ -8,6 +8,7 @@ const skills = [
   { name: 'Quality Assurance', level: 'Avançado' },
   { name: 'JS', level: 'Intermédio' },
   { name: 'MYSQL', level: 'Intermédio' },
+   { name: 'UX/UI', level: 'Intermédio' }
 ];
 
 const Skills = () => {
